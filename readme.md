@@ -1,4 +1,4 @@
-# 🔍 Simple MCP Server for SerpAPI
+# 🔍 MCP Server for SerpAPI
 
 A lightweight command-line tool to query [SerpAPI](https://serpapi.com/) using the **Model Context Protocol (MCP)**.
 
