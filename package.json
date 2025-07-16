@@ -1,6 +1,6 @@
 {
   "name": "mcp-serpapi",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "main": "dist/index.js",
   "types": "types/index.d.ts",
   "bin": "dist/index.js",
