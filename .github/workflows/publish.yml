@@ -5,9 +5,6 @@ on:
     tags:
       - 'v[0-9]+.[0-9]+.[0-9]+'
 
-env:
-  GITHUB_TOKEN: ${{ secrets.REPO_TOKEN }}
-
 jobs:
   publish:
     runs-on: ubuntu-latest
@@ -20,4 +17,6 @@ jobs:
       - run: npm run lint --fix
       # - run: npm test
       - run: npm run build
-      - run: npm publish
+      - uses: JS-DevTools/npm-publish@v1
+        with:
+          token: ${{ secrets.NPM_TOKEN }}
