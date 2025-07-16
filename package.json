@@ -1,0 +1,95 @@
+{
+  "name": "mcp-serpapi",
+  "version": "0.0.1",
+  "main": "dist/index.js",
+  "types": "types/index.d.ts",
+  "bin": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "npm run build",
+    "build:clean": "rm -rf dist",
+    "build:compile": "tsc --project tsconfig.build.json",
+    "build:chmod": "chmod +x dist/index.js",
+    "build": "npm run build:clean && npm run build:compile && npm run build:chmod",
+    "lint": "eslint src",
+    "fix": "yarn install && run-p \"lint:prettier --write\" \"lint:eslint --fix\" \"typecheck\"",
+    "lint:prettier": "prettier \"**/*.{js,jsx,ts,tsx,css,scss,json,md,yml,html}\"",
+    "lint:eslint": "eslint \"**/*.{ts,tsx}\"",
+    "typecheck": "tsc --noEmit --project ./tsconfig.json",
+    "lint:all": "run-p \"lint:prettier --check\" \"lint:eslint\" \"typecheck\""
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "homepage": "https://github.com/CdTgr/mcp-serpapi",
+  "repository": {
+    "url": "https://github.com/CdTgr/mcp-serpapi.git"
+  },
+  "bugs": {
+    "url": "https://github.com/CdTgr/mcp-serpapi/issues"
+  },
+  "type": "module",
+  "files": [
+    "dist",
+    "types",
+    "readme.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "serpapi",
+    "search engine",
+    "google",
+    "bing",
+    "duckduckgo",
+    "yandex",
+    "baidu",
+    "search api",
+    "mcp",
+    "model context protocol",
+    "modelcontextprotocol",
+    "typescript",
+    "nodejs",
+    "node",
+    "mcp utility"
+  ],
+  "author": "GhosT <cd.tgr9@gmail.com>",
+  "license": "MIT",
+  "description": "A utility for the Model Context Protocol (MCP) to interact with SerpApi.",
+  "packageManager": "yarn@4.5.3",
+  "preferGlobal": true,
+  "devDependencies": {
+    "@eslint/js": "^9.26.0",
+    "@tsconfig/node22": "^22.0.1",
+    "@types/nodemailer": "^6.4.17",
+    "@types/prettier": "^3.0.0",
+    "@typescript-eslint/eslint-plugin": "^8.32.0",
+    "@typescript-eslint/parser": "^8.32.0",
+    "eslint": "^9.26.0",
+    "eslint-config-prettier": "^10.1.5",
+    "eslint-plugin-prettier": "^5.4.0",
+    "eslint-plugin-simple-import-sort": "^12.1.1",
+    "n8n-workflow": "1.82.0",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^3.5.3",
+    "tsx": "^4.19.4",
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.32.0"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.11.2",
+    "@types/yargs": "^17.0.33",
+    "n8n-nodes-serpapi": "^0.1.6",
+    "serpapi": "^2.1.0",
+    "yargs": "^17.7.2",
+    "zod": "^3.24.4"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./types/index.d.ts"
+    }
+  }
+}
